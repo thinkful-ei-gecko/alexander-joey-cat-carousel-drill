@@ -17,9 +17,10 @@ function makeHtml(fizzBuzzResult){
         fizzResult = fizzBuzzResult;
     }
     return `
-    <div class ='fizz-buzz-item${fizzResult}'
+    <div class ='fizz-buzz-item ${fizzResult}'
     ${fizzBuzzResult}
-    </div> `
+    </div>
+    `
 }
 
 function formSubmit(event){
@@ -30,10 +31,11 @@ function formSubmit(event){
         const finalResults = [];
         for (let i = 0; i < countTo, i++){
             finalResults.push(fizzBuzz(i));
-        }
-    })
+    }
+
     const html = finalResults.map(results => makeHtml(results));
     $('.js-results').html(html);
+  });
 }
 
 $(formSubmit);
