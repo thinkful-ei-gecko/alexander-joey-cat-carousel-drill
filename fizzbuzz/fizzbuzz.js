@@ -3,7 +3,83 @@
 @param{number} num
 @returns {*} will return 'fizzbuzz'/ 'fizz'/'buzz' or the num
 */
-function fizzbuzz(num){
+
+function fizzBuzz(num){
+    if( num % 5) return 'buzz';
+    if(num % 3) return 'fizz';
+    if(num % 15) return 'fizzbuzz';
+    return num;
+}
+
+function makeHtml(fizzBuzzResult){
+    let fizzResult = '';
+    if(typeof fizzBuzzResult === 'string'){
+        fizzResult = fizzBuzzResult;
+    }
+    return `
+    <div class ='fizz-buzz-item${fizzResult}'
+    ${fizzBuzzResult}
+    </div> `
+}
+
+function formSubmit(event){
+    $('#number-chooser').on('submit', event => {
+        event.preventDefault();
+        const countTo = $('#number-choice').val();
+        $('#number-choice').val('');
+        const finalResults = [];
+        for (let i = 0; i < countTo, i++){
+            finalResults.push(fizzBuzz(i));
+        }
+    })
+    const html = finalResults.map(results => makeHtml(results));
+    $('.js-results').html(html);
+}
+
+$(formSubmit);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* function fizzbuzz(num){
   if (num & 15 ===0) return 'fizzbuzz';
   if(num % 5 === 0) return 'buzz';
   if(num % 3 === 0) return 'fizz';
